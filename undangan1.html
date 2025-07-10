@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan Dickey & Ani</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .slider-wrapper {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      width: 300vw;
+      height: 100%;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 24px;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .fade-text > * {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s forwards;
+    }
+
+    .fade-text > *:nth-child(1) { animation-delay: 0.2s; }
+    .fade-text > *:nth-child(2) { animation-delay: 0.6s; }
+    .fade-text > *:nth-child(3) { animation-delay: 1s; }
+    .fade-text > *:nth-child(4) { animation-delay: 1.4s; }
+    .fade-text > *:nth-child(5) { animation-delay: 1.8s; }
+    .fade-text > *:nth-child(6) { animation-delay: 2.2s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2, h3, p {
+      color: #2c3e50;
+      margin: 0 0 12px;
+    }
+
+    .highlight {
+      color: #8e44ad;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-top: 16px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    .nav {
+      text-align: center;
+      position: fixed;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .nav button {
+      padding: 10px 16px;
+      margin: 0 6px;
+      font-size: 16px;
+      border: none;
+      background-color: #8e44ad;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .nav button:hover {
+      background-color: #732d91;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-wrapper">
+    <div class="slider" id="slider">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <div class="container fade-text">
+          <h1>Undangan Pernikahan</h1>
+          <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+          <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami:</p>
+          <h2 class="highlight">Dicky Darmawan (Palen)</h2>
+          <p>Putra Kedua dari Bpk. Darsono & Ibu Jubaedah</p>
+          <h2 class="highlight">Ani Sukaeni</h2>
+          <p>Putri Pertama dari Bpk. Sarkadi & Ibu Marni</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="container fade-text">
+          <div class="section">
+            <h3>🕊️ Akad Nikah</h3>
+            <p><strong>Kamis, 07 Agustus 2025</strong><br/>
+            Pukul 13.00 WIB - Selesai<br/>
+            Di kediaman mempelai wanita</p>
+          </div>
+          <div class="section">
+            <h3>🎉 Resepsi Pernikahan</h3>
+            <p><strong>Kamis, 07 Agustus 2025</strong><br/>
+            Pukul 13.00 WIB - Selesai<br/>
+            Blok 5 RT 003 / RW 005, Desa Wanakaya,<br/>Kec. Haurgeulis, Kab. Indramayu</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <div class="container fade-text">
+          <div class="section">
+            <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+          </div>
+          <div class="footer">
+            Hormat kami,<br/>
+            <strong>Dickey Darmawan & Ani Sukaeni</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigasi manual -->
+  <div class="nav">
+    <button onclick="goToSlide(0)">1</button>
+    <button onclick="goToSlide(1)">2</button>
+    <button onclick="goToSlide(2)">3</button>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const slider = document.getElementById('slider');
+    let currentSlide = 0;
+    const totalSlides = 3;
+    const delay = 8000; // 8 detik
+
+    function goToSlide(index) {
+      currentSlide = index;
+      slider.style.transform = `translateX(-${index * 100}vw)`;
+      resetAnimations();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    function resetAnimations() {
+      document.querySelectorAll('.fade-text').forEach(container => {
+        container.classList.remove('fade-text');
+        void container.offsetWidth; // trigger reflow
+        container.classList.add('fade-text');
+      });
+    }
+
+    setInterval(nextSlide, delay);
+  </script>
+</body>
+</html>
